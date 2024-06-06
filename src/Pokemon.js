@@ -32,14 +32,14 @@ function Poke() {
     recupererDonneesApi();
   }, []);
   
-  useEffect(() => {
-    const nouveauTableau = [];
-    moves.forEach(element => {
-      const elements = element.split(','); 
-      nouveauTableau.push(elements);
-    });
-    setElementsTableau(nouveauTableau);
-  }, [moves]);
+  //useEffect(() => {
+    //const nouveauTableau = [];
+    //moves.forEach(element => {
+      //const elements = element.split(','); 
+      //nouveauTableau.push(elements);
+    //});
+    //setElementsTableau(nouveauTableau);
+  //}, [moves]);
   
   const Name = (e) => {
     setNom(e.target.value);
@@ -156,9 +156,7 @@ function Poke() {
           <>
             <p><strong>{poke[index][" Name"]}</strong>- currentHP {poke[index]["currentHp"]} / HP {poke[index]["HP"]}</p>
             <Pv currentHp={poke[index]["currentHp"]} maxHp={poke[index]["HP"]}/>
-            <button onClick={Attaque} able={elementsTableau.length === 0}>
-            {elementsTableau.length > 0 && elementsTableau[index] && elementsTableau[index][1]}
-            </button>
+            <button onClick={Attaque}>Attaque</button>
             <button onClick={SpeAtt}> Special Attaque</button>
           </>
         )}
